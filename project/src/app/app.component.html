@@ -1,0 +1,31 @@
+<p>Hola {{city}}, {{ 1 + 1 }}</p>
+<app-ejemplo-1 />
+<section><app-ejemplo-1 /></section>
+@if (isServerRunning){
+<p>Bienvenido de nuevo, Usuario</p>
+}
+@else {<p>No, el servidor no esta corriendo</p>}
+
+@if (city === 'San Francisco'){
+    <p>Estamos en {{city}}</p>
+}
+@else {
+    <p>Estamos perdido en {{city}}, ¿Como llegamos aca?</p>
+}
+<ul>
+    @for (p of Users; track p.id){
+        <li>{{p.name}}</li>
+    }
+</ul>
+
+<img alt="photo" [src]="imageURL">
+
+<div [contentEditable]="isEditable">Escribir nombre de nuevo usuario</div>
+<br>
+<button (click)="greet()">Enviar</button>
+
+<section (mouseover)="onMouseOver()"><h1>Pasa el mouse por aca</h1></section>
+
+<app-ejemplo-1 occupation="Angular Developer"></app-ejemplo-1>
+
+<p>The user's occupation is {{occupation}}</p>
